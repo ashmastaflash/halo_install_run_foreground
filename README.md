@@ -1,5 +1,5 @@
 # halo_install_run_foreground
-This script installs and runs the Halo agent in the foreground
+This script installs and runs the Halo agent, and sleeps for 3600 seconds
 
 1. Embed the halo_check.sh script in a Docker image
 1. Run the image, specifying the halo_check.sh script as the command.

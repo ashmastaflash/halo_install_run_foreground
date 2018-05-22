@@ -31,8 +31,16 @@ yum check-update > /dev/null
 # install the agent
 yum -y install cphalo
 
-# configure agent key
-/opt/cloudpassage/bin/configure --agent-key=${AGENT_KEY} --proxy=${PROXY} --grid=https://grid.cloudpassage.com/grid
+# configure proxy and agent key
+
+if [ "${PROXY}" != "" ]:
+then
+  export PROXY_OPTION="--proxy="
+else
+  export PROXY_OPTION=""
+fi
+
+/opt/cloudpassage/bin/configure --agent-key=${AGENT_KEY} ${PROXY_OPTION} --grid=https://grid.cloudpassage.com/grid
 
 # start the agent for the first time
 /etc/init.d/cphalod start

@@ -32,7 +32,7 @@ yum check-update > /dev/null
 yum -y install cphalo
 
 # configure agent key
-/opt/cloudpassage/bin/configure --agent-key=${AGENT_KEY} --grid=https://grid.cloudpassage.com/grid
+/opt/cloudpassage/bin/configure --agent-key=${AGENT_KEY} --proxy=awsproxy:3128 --grid=https://grid.cloudpassage.com/grid
 
 # start the agent for the first time
 /etc/init.d/cphalod start

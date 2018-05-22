@@ -33,7 +33,7 @@ yum -y install cphalo
 
 # configure proxy and agent key
 
-if [ "${PROXY}" != "" ]:
+if [ "${PROXY}" != "" ]
 then
   export PROXY_OPTION="--proxy="
 else

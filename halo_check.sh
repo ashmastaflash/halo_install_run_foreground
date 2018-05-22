@@ -20,7 +20,7 @@
 echo -e '[cloudpassage]
 name=CloudPassage
 baseurl=https://production.packages.cloudpassage.com/redhat/$basearch
-gpgcheck=1'  | sudo tee /etc/yum.repos.d/cloudpassage.repo > /dev/null
+gpgcheck=1'  | tee /etc/yum.repos.d/cloudpassage.repo > /dev/null
 
 # import CloudPassage public key
 rpm --import https://production.packages.cloudpassage.com/cloudpassage.packages.key
@@ -36,7 +36,8 @@ yum -y install cphalo
 
 # start the agent for the first time
 /etc/init.d/cphalod start
+# /opt/cloudpassage/bin/cphalo --daemon
 
-while true do;
-    cat /opt/cloudpassage/config/id
-done
+sleep 3600
+# cat /opt/cloudpassage/data/cphalo.properties | grep daemon-key | awk -F= '{print $2}'
+# done

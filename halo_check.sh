@@ -36,8 +36,6 @@ yum -y install cphalo
 
 # start the agent for the first time
 /etc/init.d/cphalod start
-# /opt/cloudpassage/bin/cphalo --daemon
 
 sleep 3600
 # cat /opt/cloudpassage/data/cphalo.properties | grep daemon-key | awk -F= '{print $2}'
-# done

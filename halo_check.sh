@@ -35,11 +35,12 @@ yum -y install cphalo initscripts
 
 if [ "${PROXY}" != "" ]
 then
-  export PROXY_OPTION="--proxy="
+  export PROXY_OPTION="--proxy=${PROXY}"
 else
   export PROXY_OPTION=""
 fi
 
+echo "Proxy options: ${PROXY_OPTION}"
 /opt/cloudpassage/bin/configure --agent-key=${AGENT_KEY} ${PROXY_OPTION} --grid=https://grid.cloudpassage.com/grid
 
 # start the agent for the first time

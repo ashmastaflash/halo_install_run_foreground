@@ -29,7 +29,7 @@ rpm --import https://production.packages.cloudpassage.com/cloudpassage.packages.
 yum check-update > /dev/null
 
 # install the agent
-yum -y install cphalo
+yum -y install cphalo initscripts
 
 # configure proxy and agent key
 

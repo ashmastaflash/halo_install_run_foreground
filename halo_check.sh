@@ -46,5 +46,9 @@ echo "Proxy options: ${PROXY_OPTION}"
 # start the agent for the first time
 /etc/init.d/cphalod start
 
+sleep 10
+
+cat /opt/cloudpassage/log/*
+
 sleep 3600
 # cat /opt/cloudpassage/data/cphalo.properties | grep daemon-key | awk -F= '{print $2}'
